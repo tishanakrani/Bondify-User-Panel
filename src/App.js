@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/Home' element={
+        <Route path='/' element={
           <privateRoute>
               <MainLayout>
                 <Home/>

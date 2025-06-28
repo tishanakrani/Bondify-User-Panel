@@ -1,15 +1,15 @@
 import React from 'react'
+import Footer from '../../Layout/Footer'
 
 const Blog = () => {
   return (
     <>
-
-      <div className='bg-Homepage'>
-        <div className='mx-auto px-3'>
+      <div className='bg-Homepage -mt-36'>
+        <div className='mx-auto px-3 pt-[145px] pb-[370px]'>
           <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
             <div className='bg-[#75879b26] rounded-lg overflow-hidden'>
               <div>
-                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog1.webp'/>
+                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog1.webp' />
               </div>
               <div className='font-Popins pb-2'>
                 <h3 className="text-[22px] font-medium text-white p-3 md:my-3 md:mt-0 mt-3">3 Main Problems In A Long Distance Relationship</h3>
@@ -17,9 +17,9 @@ const Blog = () => {
               </div>
             </div>
 
-             <div className='bg-[#75879b26] rounded-lg overflow-hidden'>
+            <div className='bg-[#75879b26] rounded-lg overflow-hidden'>
               <div>
-                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog2.webp'/>
+                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog2.webp' />
               </div>
               <div className='font-Popins pb-2'>
                 <h3 className="text-[22px] font-medium text-white p-3 md:my-3 md:mt-0 mt-3">5 Things to Do To Forget Your Ex</h3>
@@ -27,9 +27,9 @@ const Blog = () => {
               </div>
             </div>
 
-             <div className='bg-[#75879b26] rounded-lg overflow-hidden'>
+            <div className='bg-[#75879b26] rounded-lg overflow-hidden'>
               <div>
-                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog3.webp'/>
+                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog3.webp' />
               </div>
               <div className='font-Popins pb-2'>
                 <h3 className="text-[22px] font-medium text-white p-3 md:my-3 md:mt-0 mt-3">5 Things To Do When You Are Feeling Lonely</h3>
@@ -38,7 +38,7 @@ const Blog = () => {
 
             <div className='bg-[#75879b26] rounded-lg overflow-hidden'>
               <div>
-                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog4.webp'/>
+                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog4.webp' />
               </div>
               <div className='font-Popins pb-2'>
                 <h3 className="text-[22px] font-medium text-white p-3 md:my-3 md:mt-0 mt-3">How To Cope Up With A Terrible Breakup?</h3>
@@ -47,7 +47,7 @@ const Blog = () => {
 
             <div className='bg-[#75879b26] rounded-lg overflow-hidden'>
               <div>
-                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog5.webp'/>
+                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog5.webp' />
               </div>
               <div className='font-Popins pb-2'>
                 <h3 className="text-[22px] font-medium text-white p-3 md:my-3 md:mt-0 mt-3">How to Move On Over a Breakup?</h3>
@@ -56,7 +56,7 @@ const Blog = () => {
 
             <div className='bg-[#75879b26] rounded-lg overflow-hidden'>
               <div>
-                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog6.webp'/>
+                <img className='rounded-b-lg' src='https://clarityapp.in/img/blog/blogThumbnails/blog6.webp' />
               </div>
               <div className='font-Popins pb-2'>
                 <h3 className="text-[22px] font-medium text-white p-3 md:my-3 md:mt-0 mt-3">Is it OKAY or healthy to be friends with your Ex?</h3>
@@ -66,8 +66,9 @@ const Blog = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
-)
+  )
 }
 
 export default Blog

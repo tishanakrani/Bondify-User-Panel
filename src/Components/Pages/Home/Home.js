@@ -4,69 +4,70 @@ import { Link } from 'react-router';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Footer from '../Layout/Footer';
 
 const Home = () => {
 
-   const settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  autoplay: true,           
-  Speed: 1000, 
-  cssEase: "linear",
-  slidesToShow: 1.5,  
-  slidesToShow: 4,
-  slidesToScroll: 1.5,
-  rows: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        rows: 1,
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    Speed: 1000,
+    cssEase: "linear",
+    slidesToShow: 1.5,
+    slidesToShow: 4,
+    slidesToScroll: 1.5,
+    rows: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          rows: 1,
+        },
       },
-    },
-    {
-      breakpoint: 640,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        rows: 1,
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 1,
+        },
       },
-    },
-  ],
-};
+    ],
+  };
 
 
- const settings2 = {
-  dots: false,
-  arrows: true,
-  infinite: true,
-  autoplay: false,
-  // speed: 1000,            
-  // autoplaySpeed: 4000,    
-  // cssEase: "ease-in-out",
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  rows: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
+  const settings2 = {
+    dots: false,
+    arrows: true,
+    infinite: true,
+    autoplay: false,
+    // speed: 1000,            
+    // autoplaySpeed: 4000,    
+    // cssEase: "ease-in-out",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    rows: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
       },
-    },
-    {
-      breakpoint: 640,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
       },
-    },
-  ],
-};
+    ],
+  };
 
 
 
@@ -88,22 +89,22 @@ const Home = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
         setFade(true);
       }, 500);
-    }, 4000); 
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <>
-      <div className='bg-Homepage'>
-        <div className='xl:max-w[90%] mx-auto px-3'>
+      <div className='bg-Homepage -mt-36 pb-[400px]'>
+        <div className='xl:max-w[90%] mx-auto px-3 pt-32'>
           <div className='grid lg:grid-cols-2 grid-cols-1 xl:items-center items-start justify-between flex-wrap'>
             <div>
               <h2 className='text-[52px] font-league tracking-wide text-white font-light relative lg:w-fit lg:text-left text-start'>The door to</h2>
               <svg xmlns="http://www.w3.org/2000/svg" width="113" height="12" viewBox="0 0 113 12" fill="none" className='ml-[85px]'><path d="M1 11C18.6957 4.64899 68.7288 -0.641643 112 1.47349" stroke="#FF4848" strokeWidth="2"></path></svg>
               <h2 className='text-[#15B37E] lg:text-[64px] text-[58px] lg:justify-start justify-center font-bold mt-5 flex items-center gap-2 '>
-                Friendship 
-                  <img className='h-[69px] w-[87px]' src='https://www.talkangels.com/static/media/Vector8.14b38eec580baa2ebc12.png'/>
+                Friendship
+                <img className='h-[69px] w-[87px]' src='https://www.talkangels.com/static/media/Vector8.14b38eec580baa2ebc12.png' />
                 Forever
               </h2>
               <h2 className='text-white lg:text-[80px] text-[60px] lg:text-left text-center font-bold'>Unlocked!</h2>
@@ -111,7 +112,7 @@ const Home = () => {
               <div className='flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center'>
                 <Link to="#" className='w-[230px] h-[60px] bg-[#15B37E] text-[20px] text-white rounded-full flex items-center justify-center gap-[34px]'>
                   Get Started
-                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="16" viewBox="0 0 21 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.8266 15.6913C13.7392 15.7866 13.6338 15.863 13.5167 15.916C13.3996 15.969 13.2732 15.9976 13.1451 15.9998C13.0169 16.0021 12.8896 15.9782 12.7707 15.9294C12.6519 15.8806 12.5439 15.808 12.4532 15.7159C12.3626 15.6238 12.2911 15.5141 12.2431 15.3933C12.1951 15.2725 12.1715 15.1431 12.1738 15.0129C12.1761 14.8826 12.2041 14.7542 12.2563 14.6352C12.3085 14.5162 12.3837 14.4091 12.4775 14.3203L17.7425 8.97003H0.954582C0.70141 8.97003 0.458609 8.86783 0.279589 8.68591C0.100571 8.504 -1.90735e-06 8.25727 -1.90735e-06 8C-1.90735e-06 7.74273 0.100571 7.496 0.279589 7.31408C0.458609 7.13217 0.70141 7.02997 0.954582 7.02997H17.7425L12.4775 1.67971C12.3837 1.59091 12.3085 1.48382 12.2563 1.36483C12.2041 1.24584 12.1761 1.11739 12.1738 0.987143C12.1715 0.856896 12.1951 0.727521 12.2431 0.606735C12.2911 0.48595 12.3626 0.376228 12.4532 0.284115C12.5439 0.192003 12.6519 0.119386 12.7707 0.0705988C12.8896 0.0218115 13.0169 -0.00214708 13.1451 0.000150968C13.2732 0.00244901 13.3996 0.0309567 13.5167 0.0839747C13.6338 0.136993 13.7392 0.213434 13.8266 0.308738L20.7208 7.31451C20.8996 7.49639 21 7.74294 21 8C21 8.25706 20.8996 8.50361 20.7208 8.68549L13.8266 15.6913Z" fill="currentColor"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="16" viewBox="0 0 21 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.8266 15.6913C13.7392 15.7866 13.6338 15.863 13.5167 15.916C13.3996 15.969 13.2732 15.9976 13.1451 15.9998C13.0169 16.0021 12.8896 15.9782 12.7707 15.9294C12.6519 15.8806 12.5439 15.808 12.4532 15.7159C12.3626 15.6238 12.2911 15.5141 12.2431 15.3933C12.1951 15.2725 12.1715 15.1431 12.1738 15.0129C12.1761 14.8826 12.2041 14.7542 12.2563 14.6352C12.3085 14.5162 12.3837 14.4091 12.4775 14.3203L17.7425 8.97003H0.954582C0.70141 8.97003 0.458609 8.86783 0.279589 8.68591C0.100571 8.504 -1.90735e-06 8.25727 -1.90735e-06 8C-1.90735e-06 7.74273 0.100571 7.496 0.279589 7.31408C0.458609 7.13217 0.70141 7.02997 0.954582 7.02997H17.7425L12.4775 1.67971C12.3837 1.59091 12.3085 1.48382 12.2563 1.36483C12.2041 1.24584 12.1761 1.11739 12.1738 0.987143C12.1715 0.856896 12.1951 0.727521 12.2431 0.606735C12.2911 0.48595 12.3626 0.376228 12.4532 0.284115C12.5439 0.192003 12.6519 0.119386 12.7707 0.0705988C12.8896 0.0218115 13.0169 -0.00214708 13.1451 0.000150968C13.2732 0.00244901 13.3996 0.0309567 13.5167 0.0839747C13.6338 0.136993 13.7392 0.213434 13.8266 0.308738L20.7208 7.31451C20.8996 7.49639 21 7.74294 21 8C21 8.25706 20.8996 8.50361 20.7208 8.68549L13.8266 15.6913Z" fill="currentColor"></path></svg>
                 </Link>
                 <Link to="#" className='w-[260px] h-[60px] bg-red-500 text-[20px] text-white rounded-full flex items-center justify-center gap-[34px]'>
                   Download the app
@@ -120,196 +121,196 @@ const Home = () => {
                   </div>
                 </Link>
               </div>
-              </div>
+            </div>
 
             <div className='relative items-center justify-center lg:order-2 order-1 lg:flex hidden'>
-                <div className={`w-full h-full absolute mb-48 object-contain transition-opacity duration-700 ease-in-out ${fade ? 'opacity-100' : 'opacity-0'}`}>
-                  <img  key={currentIndex} src={images[currentIndex]} alt="hero" />
+              <div className={`w-full h-full absolute mb-48 object-contain transition-opacity duration-700 ease-in-out ${fade ? 'opacity-100' : 'opacity-0'}`}>
+                <img key={currentIndex} src={images[currentIndex]} alt="hero" />
               </div>
             </div>
           </div>
         </div>
-      
-      <div className='pt-[66px] bg-Homepage mt-[339px] pb-[64px]'>
-        <h3 className='text-center text-white text-[64px] relative'>Listeners
-          <span className='absolute bottom-2 left-1/2 -translate-x-1/2'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="113" height="12" viewBox="0 0 113 12" fill="none"><path d="M1 11C18.6957 4.64899 68.7288 -0.641643 112 1.47349" stroke="#FF4848" stroke-width="2"></path></svg>
-          </span>
-        </h3>
-        <div className=' mx-auto px-7 mt-[63px]'>
-          <div className='grid xxl:grid-cols-4 xxl:gap-x-[52px] gap-x-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-20 gap-y-6'>
-            <div className='bg-[#232243] rounded-xl flex items-center justify-center py-[25px] px-[20px]'>
-              <div>
-                <div className='relative listener z-20 flex items-center justify-center'>
-                  <div className='w-[217px] h-[217px] rounded-full overflow-hidden'>
-                    <img src='https://img.freepik.com/free-photo/smiling-young-beautiful-girl-looking-straight-ahead-wearing-white-t-shirt-isolated-pink_141793-86537.jpg' className='object-cover h-full w-full'/>
+
+        <div className='pt-[66px] bg-Homepage mt-[339px] pb-[64px]'>
+          <h3 className='text-center text-white text-[64px] relative'>Listeners
+            <span className='absolute bottom-2 left-1/2 -translate-x-1/2'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="113" height="12" viewBox="0 0 113 12" fill="none"><path d="M1 11C18.6957 4.64899 68.7288 -0.641643 112 1.47349" stroke="#FF4848" stroke-width="2"></path></svg>
+            </span>
+          </h3>
+          <div className=' mx-auto px-7 mt-[63px]'>
+            <div className='grid xxl:grid-cols-4 xxl:gap-x-[52px] gap-x-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-20 gap-y-6'>
+              <div className='bg-[#232243] rounded-xl flex items-center justify-center py-[25px] px-[20px]'>
+                <div>
+                  <div className='relative listener z-20 flex items-center justify-center'>
+                    <div className='w-[217px] h-[217px] rounded-full overflow-hidden'>
+                      <img src='https://img.freepik.com/free-photo/smiling-young-beautiful-girl-looking-straight-ahead-wearing-white-t-shirt-isolated-pink_141793-86537.jpg' className='object-cover h-full w-full' />
+                    </div>
                   </div>
-                </div>
-                <div className='mt-5'>
-                  <div className='flex items-center justify-center gap-2'>
-                    <h4 className="text-[#E4D056] text-[32px] font-bold text-center">Riya</h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" fill="#4285F4"></path><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" stroke="#4285F4"></path></svg>
-                  </div>
-                  <p className="text-[#D9D9D9]/50 text-center text-base">F-30 Yrs • 2 yrs of Experience</p>
                   <div className='mt-5'>
-                    <p className="text-white text-justify text-lg font-normal max-w-[300px] text-ellipsis max-h-[170px] overflow-hidden">I started dating a guy when I was young it went on for 4 long years. Since the beginning of the relationship, I found myself to be begging for attention &amp; time but he put no effort at all. Also, he wouldn't talk to me for days which make me panic. During the first 2 years, when I felt like things were getting hard, I portrayed my frustration by saying that I wanted to break up but he always assured me that things would be fine &amp; he is in love with me. But soon, he started taking me for granted &amp; blackmailed me that he would leave me and blame me for everything that went wrong. Finally, I broke up with him. It wasn't easy but I healed myself &amp; now I want to help you.</p>
+                    <div className='flex items-center justify-center gap-2'>
+                      <h4 className="text-[#E4D056] text-[32px] font-bold text-center">Riya</h4>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" fill="#4285F4"></path><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" stroke="#4285F4"></path></svg>
+                    </div>
+                    <p className="text-[#D9D9D9]/50 text-center text-base">F-30 Yrs • 2 yrs of Experience</p>
+                    <div className='mt-5'>
+                      <p className="text-white text-justify text-lg font-normal max-w-[300px] text-ellipsis max-h-[170px] overflow-hidden">I started dating a guy when I was young it went on for 4 long years. Since the beginning of the relationship, I found myself to be begging for attention &amp; time but he put no effort at all. Also, he wouldn't talk to me for days which make me panic. During the first 2 years, when I felt like things were getting hard, I portrayed my frustration by saying that I wanted to break up but he always assured me that things would be fine &amp; he is in love with me. But soon, he started taking me for granted &amp; blackmailed me that he would leave me and blame me for everything that went wrong. Finally, I broke up with him. It wasn't easy but I healed myself &amp; now I want to help you.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className='bg-[#232243] rounded-xl flex items-center justify-center py-[25px] px-[20px]'>
-              <div>
-                <div className='relative listener z-20 flex items-center justify-center'>
-                  <div className='w-[217px] h-[217px] rounded-full overflow-hidden'>
-                    <img src='https://i.pinimg.com/736x/23/76/b6/2376b6619630266ab3de14ae52897d39.jpg' className='object-cover h-full w-full'/>
+              <div className='bg-[#232243] rounded-xl flex items-center justify-center py-[25px] px-[20px]'>
+                <div>
+                  <div className='relative listener z-20 flex items-center justify-center'>
+                    <div className='w-[217px] h-[217px] rounded-full overflow-hidden'>
+                      <img src='https://i.pinimg.com/736x/23/76/b6/2376b6619630266ab3de14ae52897d39.jpg' className='object-cover h-full w-full' />
+                    </div>
                   </div>
-                </div>
-                <div className='mt-5'>
-                  <div className='flex items-center justify-center gap-2'>
-                    <h4 className="text-[#E4D056] text-[32px] font-bold text-center">Shivani</h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" fill="#4285F4"></path><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" stroke="#4285F4"></path></svg>
-                  </div>
-                  <p className="text-[#D9D9D9]/50 text-center text-base">F-22 Yrs • 1.4 yrs of Experience</p>
                   <div className='mt-5'>
-                    <p className="text-white text-justify text-lg font-normal max-w-[300px] text-ellipsis max-h-[170px] overflow-hidden">About 5 years ago, I met a guy. He proposed to me and I accepted the proposal. Initially, the relationship went in a very smooth way. Gradually, it became toxic. He started tracking my life like a spy. There was no personal space for me. If I wanted to do something, first I had to tell him and wait for his approval. He became extremely possessive with time, even he blocked all my male friends from my phone and told me not to talk to anyone of them. I was depressed as hell. One day, I gathered myself and told my friends everything that I felt in those 3 years and I finally, broke up with him. That day I felt like I got out of 3-year imprisonment. Let's connect if you want to share something.</p>
+                    <div className='flex items-center justify-center gap-2'>
+                      <h4 className="text-[#E4D056] text-[32px] font-bold text-center">Shivani</h4>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" fill="#4285F4"></path><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" stroke="#4285F4"></path></svg>
+                    </div>
+                    <p className="text-[#D9D9D9]/50 text-center text-base">F-22 Yrs • 1.4 yrs of Experience</p>
+                    <div className='mt-5'>
+                      <p className="text-white text-justify text-lg font-normal max-w-[300px] text-ellipsis max-h-[170px] overflow-hidden">About 5 years ago, I met a guy. He proposed to me and I accepted the proposal. Initially, the relationship went in a very smooth way. Gradually, it became toxic. He started tracking my life like a spy. There was no personal space for me. If I wanted to do something, first I had to tell him and wait for his approval. He became extremely possessive with time, even he blocked all my male friends from my phone and told me not to talk to anyone of them. I was depressed as hell. One day, I gathered myself and told my friends everything that I felt in those 3 years and I finally, broke up with him. That day I felt like I got out of 3-year imprisonment. Let's connect if you want to share something.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className='bg-[#232243] rounded-xl flex items-center justify-center py-[25px] px-[20px]'>
-              <div>
-                <div className='relative listener z-20 flex items-center justify-center'>
-                  <div className='w-[217px] h-[217px] rounded-full overflow-hidden'>
-                    <img src='https://www.talkangels.com/static/media/Listenersimg_1.9b7e99e96371a1430c2a.png' className='object-cover h-full w-full'/>
+              <div className='bg-[#232243] rounded-xl flex items-center justify-center py-[25px] px-[20px]'>
+                <div>
+                  <div className='relative listener z-20 flex items-center justify-center'>
+                    <div className='w-[217px] h-[217px] rounded-full overflow-hidden'>
+                      <img src='https://www.talkangels.com/static/media/Listenersimg_1.9b7e99e96371a1430c2a.png' className='object-cover h-full w-full' />
+                    </div>
                   </div>
-                </div>
-                <div className='mt-5'>
-                  <div className='flex items-center justify-center gap-2'>
-                    <h4 className="text-[#E4D056] text-[32px] font-bold text-center">Anuradha</h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" fill="#4285F4"></path><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" stroke="#4285F4"></path></svg>
-                  </div>
-                  <p className="text-[#D9D9D9]/50 text-center text-base">F-34 Yrs • 1 yrs of Experience</p>
                   <div className='mt-5'>
-                    <p className="text-white text-justify text-lg font-normal max-w-[300px] text-ellipsis max-h-[170px] overflow-hidden">I personally suffered from loneliness and anxiety. The journey was tough but I gradually recovered with self-love and detachment from the people who were adding negative thoughts to my life. I have even faced work and family pressure. But somehow I learned to manage both by letting go of overthinking and negative thoughts. Now I want to help others by sharing my experience of recovery and making their lives easier to live. I believe in spiritual, physical, and mental well-being and this has helped me to inculcate positive aspects into my life. Let's connect if you want to share something or want to vent. I will listen to you without any judgments.</p>                    </div>
+                    <div className='flex items-center justify-center gap-2'>
+                      <h4 className="text-[#E4D056] text-[32px] font-bold text-center">Anuradha</h4>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" fill="#4285F4"></path><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" stroke="#4285F4"></path></svg>
+                    </div>
+                    <p className="text-[#D9D9D9]/50 text-center text-base">F-34 Yrs • 1 yrs of Experience</p>
+                    <div className='mt-5'>
+                      <p className="text-white text-justify text-lg font-normal max-w-[300px] text-ellipsis max-h-[170px] overflow-hidden">I personally suffered from loneliness and anxiety. The journey was tough but I gradually recovered with self-love and detachment from the people who were adding negative thoughts to my life. I have even faced work and family pressure. But somehow I learned to manage both by letting go of overthinking and negative thoughts. Now I want to help others by sharing my experience of recovery and making their lives easier to live. I believe in spiritual, physical, and mental well-being and this has helped me to inculcate positive aspects into my life. Let's connect if you want to share something or want to vent. I will listen to you without any judgments.</p>                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className='bg-[#232243] rounded-xl flex items-center justify-center py-[25px] px-[20px]'>
-              <div>
-                <div className='relative listener z-20 flex items-center justify-center'>
-                  <div className='w-[217px] h-[217px] rounded-full overflow-hidden'>
-                    <img src='https://media.istockphoto.com/id/613557584/photo/portrait-of-a-beautifull-smiling-man.jpg?s=612x612&w=0&k=20&c=hkCg5CrmTKOApePbPOyo1U9GexEfIJOJqoLXJIvcN8E=' className='object-cover h-full w-full'/>
+              <div className='bg-[#232243] rounded-xl flex items-center justify-center py-[25px] px-[20px]'>
+                <div>
+                  <div className='relative listener z-20 flex items-center justify-center'>
+                    <div className='w-[217px] h-[217px] rounded-full overflow-hidden'>
+                      <img src='https://media.istockphoto.com/id/613557584/photo/portrait-of-a-beautifull-smiling-man.jpg?s=612x612&w=0&k=20&c=hkCg5CrmTKOApePbPOyo1U9GexEfIJOJqoLXJIvcN8E=' className='object-cover h-full w-full' />
+                    </div>
                   </div>
-                </div>
-                <div className='mt-5'>
-                  <div className='flex items-center justify-center gap-2'>
-                    <h4 className="text-[#E4D056] text-[32px] font-bold text-center">Neetesh</h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" fill="#4285F4"></path><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" stroke="#4285F4"></path></svg>
-                  </div>
-                  <p className="text-[#D9D9D9]/50 text-center text-base">F-23 Yrs • 0.5 yrs of Experience</p>
                   <div className='mt-5'>
-                  <p className="text-white text-justify text-lg font-normal max-w-[300px] text-ellipsis max-h-[170px] overflow-hidden">Due to poor guidance and peer pressure, I took up biology as my major in 10th. Although I never wanted to become a doctor, Indians have this mindset that any biology student should only become a doctor. It was difficult to convince my family &amp; they asked me to give it a try, I felt depressed. I took counseling and decided to give ICAR exam. I got placed in a nice college but when I met the people there I realized I couldn't connect with them. They always spoke with only cuss words, which I didn't like. I felt very lonely but I had no other option, over time I have made a few friends and it's better now. I hope I can be your shoulder to cry on and help you through your problems.</p>                  </div>
+                    <div className='flex items-center justify-center gap-2'>
+                      <h4 className="text-[#E4D056] text-[32px] font-bold text-center">Neetesh</h4>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" fill="#4285F4"></path><path d="M23.4675 10.4884L21.8354 8.59285C21.5233 8.23294 21.2713 7.56111 21.2713 7.08123V5.04174C21.2713 3.77006 20.2273 2.72632 18.9552 2.72632H16.9151C16.447 2.72632 15.763 2.47438 15.403 2.16246L13.5068 0.530867C12.6788 -0.176956 11.3227 -0.176956 10.4827 0.530867L8.59853 2.17446C8.23851 2.47438 7.55447 2.72632 7.08644 2.72632H5.01031C3.73823 2.72632 2.69417 3.77006 2.69417 5.04174V7.09323C2.69417 7.56111 2.44215 8.23294 2.14213 8.59285L0.522032 10.5004C-0.174011 11.3282 -0.174011 12.6718 0.522032 13.4996L2.14213 15.4071C2.44215 15.7671 2.69417 16.4389 2.69417 16.9068V18.9583C2.69417 20.2299 3.73823 21.2737 5.01031 21.2737H7.08644C7.55447 21.2737 8.23851 21.5256 8.59853 21.8375L10.4947 23.4691C11.3227 24.177 12.6788 24.177 13.5188 23.4691L15.415 21.8375C15.775 21.5256 16.447 21.2737 16.9271 21.2737H18.9672C20.2393 21.2737 21.2833 20.2299 21.2833 18.9583V16.9188C21.2833 16.4509 21.5353 15.7671 21.8474 15.4071L23.4795 13.5116C24.1755 12.6838 24.1755 11.3162 23.4675 10.4884ZM16.9871 9.73257L11.1907 15.5271C11.0227 15.6951 10.7947 15.7911 10.5547 15.7911C10.3146 15.7911 10.0866 15.6951 9.91862 15.5271L7.01444 12.6238C6.66641 12.2759 6.66641 11.7001 7.01444 11.3522C7.36246 11.0042 7.93849 11.0042 8.28651 11.3522L10.5547 13.6196L15.715 8.46089C16.063 8.11297 16.639 8.11297 16.9871 8.46089C17.3351 8.8088 17.3351 9.38465 16.9871 9.73257Z" stroke="#4285F4"></path></svg>
+                    </div>
+                    <p className="text-[#D9D9D9]/50 text-center text-base">F-23 Yrs • 0.5 yrs of Experience</p>
+                    <div className='mt-5'>
+                      <p className="text-white text-justify text-lg font-normal max-w-[300px] text-ellipsis max-h-[170px] overflow-hidden">Due to poor guidance and peer pressure, I took up biology as my major in 10th. Although I never wanted to become a doctor, Indians have this mindset that any biology student should only become a doctor. It was difficult to convince my family &amp; they asked me to give it a try, I felt depressed. I took counseling and decided to give ICAR exam. I got placed in a nice college but when I met the people there I realized I couldn't connect with them. They always spoke with only cuss words, which I didn't like. I felt very lonely but I had no other option, over time I have made a few friends and it's better now. I hope I can be your shoulder to cry on and help you through your problems.</p>                  </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div className='flex lg:justify-end justify-center'>
+            <Link className=" text-white text-center text-[24px] bg-[#232243] p-4 mr-7 rounded">View More Listeners</Link>
+          </div>
         </div>
 
-        <div className='flex lg:justify-end justify-center'>
-          <Link className=" text-white text-center text-[24px] bg-[#232243] p-4 mr-7 rounded">View More Listeners</Link>
-        </div>
-      </div>
-
-      <div className='pt-[70px]'>
-        <div className=' mx-auto px-3 overflow-x-auto'>
-          <div className='flex items-center lg:flex-nowrap flex-wrap lg:justify-start justify-center'>
-            <div>
-              <div className='relative hidden md:block'>
-                <img src='https://www.talkangels.com/static/media/iPhone-13-Pro-Front.bfd3ad4acc101a655894.png'/>
-                <img className='absolute top-1/2 -right-[155px] -translate-y-1/2 scale-125' src='https://www.talkangels.com/static/media/phonecard.3aa385532281e684d4cb.png'/>
-              </div>
-            </div>
-            <div className='xl:w-[50%] lg:w-[50%] w-full lg:ml-auto lg:mt-0'>
-              <h3 className="text-center text-white  text-[60px] relative xl:-ml-[100px] ml-0">Key Features<span className="absolute bottom-2 left-1/2  -translate-x-1/2"><svg xmlns="http://www.w3.org/2000/svg" width="113" height="12" viewBox="0 0 113 12" fill="none"><path d="M1 11C18.6957 4.64899 68.7288 -0.641643 112 1.47349" stroke="#FF4848" stroke-width="2"></path></svg></span></h3>
-            <div className='flex items-center flex-wrap justify-center'>
-                <div className='mt-14'>
-                <h4 className="text-white text-[28px]  font-semibold mt-5 lg:text-justify text-center">Empathetic Support and Solutions, Without Professional Counseling</h4>
-                <p className="text-[20px] lg:text-justify text-center text-white font-extralight">Talkangel App in an emotional wellness app where you can speak with empathetic listeners who can help you find solutions to your problems and relief over your concerns. However, the way to get advice or help on Talkangel App is very different from counselling and we do not provide any form of professional counselling.</p>
-                </div>
+        <div className='pt-[70px]'>
+          <div className=' mx-auto px-3 overflow-x-auto'>
+            <div className='flex items-center lg:flex-nowrap flex-wrap lg:justify-start justify-center'>
               <div>
-                <div class="flex lg:justify-start justify-center mt-10"></div>
-                  <h4 className="text-white text-[28px] font-semibold mt-5 lg:text-left text-center">Listeners Choose Between Real or Masked Names for Safety</h4>
-                  <p className="text-[20px] lg:text-justify text-center text-white font-extralight ">If a listener is comfortable sharing his/her name publicly then his/her name would be real otherwise we allow listeners to use a masked name to keep their identity safe online. give me title of that</p>
+                <div className='relative hidden md:block'>
+                  <img src='https://www.talkangels.com/static/media/iPhone-13-Pro-Front.bfd3ad4acc101a655894.png' />
+                  <img className='absolute top-1/2 -right-[155px] -translate-y-1/2 scale-125' src='https://www.talkangels.com/static/media/phonecard.3aa385532281e684d4cb.png' />
+                </div>
               </div>
-              <div className='mt-10'>
-                <h4 className="text-white text-[28px] font-semibold mt-5 lg:text-left text-center">Our Listener?</h4>
-                <p className="text-[20px] lg:text-justify text-center text-white font-extralight">Listeners are people on TALKANGELS App who have seen tough times in their lives and can actively listen to your problems and feelings and make you feel better.</p>
+              <div className='xl:w-[50%] lg:w-[50%] w-full lg:ml-auto lg:mt-0'>
+                <h3 className="text-center text-white  text-[60px] relative xl:-ml-[100px] ml-0">Key Features<span className="absolute bottom-2 left-1/2  -translate-x-1/2"><svg xmlns="http://www.w3.org/2000/svg" width="113" height="12" viewBox="0 0 113 12" fill="none"><path d="M1 11C18.6957 4.64899 68.7288 -0.641643 112 1.47349" stroke="#FF4848" stroke-width="2"></path></svg></span></h3>
+                <div className='flex items-center flex-wrap justify-center'>
+                  <div className='mt-14'>
+                    <h4 className="text-white text-[28px]  font-semibold mt-5 lg:text-justify text-center">Empathetic Support and Solutions, Without Professional Counseling</h4>
+                    <p className="text-[20px] lg:text-justify text-center text-white font-extralight">Talkangel App in an emotional wellness app where you can speak with empathetic listeners who can help you find solutions to your problems and relief over your concerns. However, the way to get advice or help on Talkangel App is very different from counselling and we do not provide any form of professional counselling.</p>
+                  </div>
+                  <div>
+                    <div class="flex lg:justify-start justify-center mt-10"></div>
+                    <h4 className="text-white text-[28px] font-semibold mt-5 lg:text-left text-center">Listeners Choose Between Real or Masked Names for Safety</h4>
+                    <p className="text-[20px] lg:text-justify text-center text-white font-extralight ">If a listener is comfortable sharing his/her name publicly then his/her name would be real otherwise we allow listeners to use a masked name to keep their identity safe online. give me title of that</p>
+                  </div>
+                  <div className='mt-10'>
+                    <h4 className="text-white text-[28px] font-semibold mt-5 lg:text-left text-center">Our Listener?</h4>
+                    <p className="text-[20px] lg:text-justify text-center text-white font-extralight">Listeners are people on TALKANGELS App who have seen tough times in their lives and can actively listen to your problems and feelings and make you feel better.</p>
+                  </div>
+                  <div className='mt-10'>
+                    <h4 className="text-white text-[28px] font-semibold mt-5 lg:text-left text-center">Ensuring 100% User Anonymous</h4>
+                    <p className="text-[20px] lg:text-justify text-center text-white font-extralight">Talkangel App is 100% Anonymous for users. Listeners can never know who they are talking to on the Talkangel App.</p>
+                  </div>
+                </div>
               </div>
-              <div className='mt-10'>
-                <h4 className="text-white text-[28px] font-semibold mt-5 lg:text-left text-center">Ensuring 100% User Anonymous</h4>
-                <p className="text-[20px] lg:text-justify text-center text-white font-extralight">Talkangel App is 100% Anonymous for users. Listeners can never know who they are talking to on the Talkangel App.</p>
-              </div>
-            </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className='relative  pt-[90px] px-3'>
-        <div className=' mx-auto '>
-          <div className='flex items-center justify-between'>
-            <div className='lg:max-w-[693px]'>
-              <h3 className="lg:text-left text-center text-white lg:text-[50px] text-[40px] relative uppercase font-bold ">Our Speciality<span className="absolute bottom-1 left-1/2 -translate-x-1/2"><svg xmlns="http://www.w3.org/2000/svg" width="113" height="12" viewBox="0 0 113 12" fill="none"><path d="M1 11C18.6957 4.64899 68.7288 -0.641643 112 1.47349" stroke="#FF4848" stroke-width="2"></path></svg></span></h3>
-            <p className="text-[24px] lg:text-justify text-center text-white font-extralight">Welcome to TalkAngel! We're more than just a dating app. Our platform makes it easy for you to find and chat with special people. You can look for love, friendship, or just have a nice chat. Plus, we have a cool feature that lets you recharge and make voice calls to your matches. Your safety and privacy are super important to us too.</p>
-            <p className="text-[36px] font-[600] text-white mt-[52px] lg:text-left text-center">Join TalkAngel today 
-              <span className="text-[#15B37E]"> to find the one who makes your heart happy.</span>
-            </p>
+        <div className='relative  pt-[90px] px-3'>
+          <div className=' mx-auto '>
+            <div className='flex items-center justify-between'>
+              <div className='lg:max-w-[693px]'>
+                <h3 className="lg:text-left text-center text-white lg:text-[50px] text-[40px] relative uppercase font-bold ">Our Speciality<span className="absolute bottom-1 left-1/2 -translate-x-1/2"><svg xmlns="http://www.w3.org/2000/svg" width="113" height="12" viewBox="0 0 113 12" fill="none"><path d="M1 11C18.6957 4.64899 68.7288 -0.641643 112 1.47349" stroke="#FF4848" stroke-width="2"></path></svg></span></h3>
+                <p className="text-[24px] lg:text-justify text-center text-white font-extralight">Welcome to TalkAngel! We're more than just a dating app. Our platform makes it easy for you to find and chat with special people. You can look for love, friendship, or just have a nice chat. Plus, we have a cool feature that lets you recharge and make voice calls to your matches. Your safety and privacy are super important to us too.</p>
+                <p className="text-[36px] font-[600] text-white mt-[52px] lg:text-left text-center">Join TalkAngel today
+                  <span className="text-[#15B37E]"> to find the one who makes your heart happy.</span>
+                </p>
+              </div>
+              <div>
+                <img className='absolute top-0 w-[38%] right-0 Speciality hidden md:block' src='https://www.talkangels.com/static/media/SpecialityMobile.21bdaaeeed84f5941ef3.png' />
+              </div>
             </div>
-            <div>
-              <img className='absolute top-0 w-[38%] right-0 Speciality hidden md:block' src='https://www.talkangels.com/static/media/SpecialityMobile.21bdaaeeed84f5941ef3.png'/>
+          </div>
+        </div>
+        <div className='relative  lg:pt-[178px] pt-[100px] px-7'>
+          <Slider {...settings}>
+            <div className='px-2'>
+              <div className='h-[250px] rounded-[35px] overflow-hidden'>
+                <img className='w-full h-full object-cover object-top' src='https://i.pinimg.com/736x/23/76/b6/2376b6619630266ab3de14ae52897d39.jpg' />
+              </div>
             </div>
-          </div>
+            <div className='px-2'>
+              <div className='h-[250px] rounded-[35px] overflow-hidden'>
+                <img className='w-full h-full object-cover object-top' src='https://img.freepik.com/free-photo/smiling-young-beautiful-girl-looking-straight-ahead-wearing-white-t-shirt-isolated-pink_141793-86537.jpg' />
+              </div>
+            </div>
+            <div className='px-2'>
+              <div className='h-[250px] rounded-[35px] overflow-hidden'>
+                <img className='w-full h-full object-cover object-top' src='https://avatars.mds.yandex.net/i?id=320423d984ab91d480a88de13a54e8a17215460f-12159448-images-thumbs&n=13' />
+              </div>
+            </div>
+            <div className='px-2'>
+              <div className='h-[250px] rounded-[35px] overflow-hidden'>
+                <img className='w-full h-full object-cover object-top' src='https://avatars.mds.yandex.net/i?id=2ac87f014a26f48e7928adfb6b56333f787c5f1b-10449875-images-thumbs&n=13' />
+              </div>
+            </div>
+            <div className='px-2'>
+              <div className='h-[250px] rounded-[35px] overflow-hidden'>
+                <img className='w-full h-full object-cover object-top' src='https://www.talkangels.com/static/media/Listenersimg_1.9b7e99e96371a1430c2a.png' />
+              </div>
+            </div>
+            <div className='px-2'>
+              <div className='h-[250px] rounded-[35px] overflow-hidden'>
+                <img className='w-full h-full object-cover object-top' src='https://media.istockphoto.com/id/613557584/photo/portrait-of-a-beautifull-smiling-man.jpg?s=612x612&w=0&k=20&c=hkCg5CrmTKOApePbPOyo1U9GexEfIJOJqoLXJIvcN8E=' />
+              </div>
+            </div>
+          </Slider>
         </div>
-      </div>
- <div className='relative  lg:pt-[178px] pt-[100px] px-7'>
-      <Slider {...settings}>
-        <div className='px-2'>
-          <div className='h-[250px] rounded-[35px] overflow-hidden'>
-            <img className='w-full h-full object-cover object-top' src='https://i.pinimg.com/736x/23/76/b6/2376b6619630266ab3de14ae52897d39.jpg' />
-          </div>
-        </div>
-        <div className='px-2'>
-          <div className='h-[250px] rounded-[35px] overflow-hidden'>
-            <img className='w-full h-full object-cover object-top' src='https://img.freepik.com/free-photo/smiling-young-beautiful-girl-looking-straight-ahead-wearing-white-t-shirt-isolated-pink_141793-86537.jpg' />
-          </div>
-        </div>
-        <div className='px-2'>
-          <div className='h-[250px] rounded-[35px] overflow-hidden'>
-            <img className='w-full h-full object-cover object-top' src='https://avatars.mds.yandex.net/i?id=320423d984ab91d480a88de13a54e8a17215460f-12159448-images-thumbs&n=13' />
-          </div>
-        </div>
-        <div className='px-2'>
-          <div className='h-[250px] rounded-[35px] overflow-hidden'>
-            <img className='w-full h-full object-cover object-top' src='https://avatars.mds.yandex.net/i?id=2ac87f014a26f48e7928adfb6b56333f787c5f1b-10449875-images-thumbs&n=13' />
-          </div>
-        </div>
-        <div className='px-2'>
-          <div className='h-[250px] rounded-[35px] overflow-hidden'>
-            <img className='w-full h-full object-cover object-top' src='https://www.talkangels.com/static/media/Listenersimg_1.9b7e99e96371a1430c2a.png' />
-          </div>
-        </div>
-        <div className='px-2'>
-          <div className='h-[250px] rounded-[35px] overflow-hidden'>
-            <img className='w-full h-full object-cover object-top' src='https://media.istockphoto.com/id/613557584/photo/portrait-of-a-beautifull-smiling-man.jpg?s=612x612&w=0&k=20&c=hkCg5CrmTKOApePbPOyo1U9GexEfIJOJqoLXJIvcN8E=' />
-          </div>
-        </div>
-      </Slider>
-  </div>
 
-  {/* <Slider {...settings2}>
+        {/* <Slider {...settings2}>
     <div>
       <h3 className="text-[#15B37E] text-[215px] text-center">”</h3>
       <p className="text-center text-[30px] font-extralight text-white -mt-[150px] px-3">"An extremely helpful aap, talkangels can be of tremendous assistance to those who are struggling with stress, anxiety, and despair. It's a useful tool for people who have recently lost someone and are trying to move on as well. The software provides a diverse array of features that are all conveniently placed in one location, including heat maps, session recordings, user metrics, and a sophisticated dashboard. In light of my experience, I heartily endorse talkangels and considers it as an amazing app."</p>
@@ -338,29 +339,29 @@ const Home = () => {
     </div>
   </Slider> */}
 
-  <div className='h-[644px] bg-cover bg-no-repeat bg-bottom bg-bimg mt-24 pt-[111px] pb-[190px] relative'>
-    <div className=' mx-auto px-3'>
-        <div>
-          <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex flex-wrap md:justify-start justify-center">Your happily
-            <span className="uppercase ml-2 lg:static block">ever after</span>
-          </h2>
-          <h2 className=" text-start md:text-[68px] text-[47px] font-semibold text-white uppercase  relative">with Talkangel!</h2>
-          <p className="lg:text-left text-center text-[26px] text-white font-thin lg:max-w-[630px] mt-2">Join the exciting journey of meeting new friends within our vibrant community of over one million users!</p>
-          <div className='flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center'>
-            <Link className='w-[230px] h-[65px] bg-[#15B37E] text-[22px] text-white rounded-full flex items-center justify-center gap-[34px]'>Get Started
-            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="16" viewBox="0 0 21 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.8266 15.6913C13.7392 15.7866 13.6338 15.863 13.5167 15.916C13.3996 15.969 13.2732 15.9976 13.1451 15.9998C13.0169 16.0021 12.8896 15.9782 12.7707 15.9294C12.6519 15.8806 12.5439 15.808 12.4532 15.7159C12.3626 15.6238 12.2911 15.5141 12.2431 15.3933C12.1951 15.2725 12.1715 15.1431 12.1738 15.0129C12.1761 14.8826 12.2041 14.7542 12.2563 14.6352C12.3085 14.5162 12.3837 14.4091 12.4775 14.3203L17.7425 8.97003H0.954582C0.70141 8.97003 0.458609 8.86783 0.279589 8.68591C0.100571 8.504 -1.90735e-06 8.25727 -1.90735e-06 8C-1.90735e-06 7.74273 0.100571 7.496 0.279589 7.31408C0.458609 7.13217 0.70141 7.02997 0.954582 7.02997H17.7425L12.4775 1.67971C12.3837 1.59091 12.3085 1.48382 12.2563 1.36483C12.2041 1.24584 12.1761 1.11739 12.1738 0.987143C12.1715 0.856896 12.1951 0.727521 12.2431 0.606735C12.2911 0.48595 12.3626 0.376228 12.4532 0.284115C12.5439 0.192003 12.6519 0.119386 12.7707 0.0705988C12.8896 0.0218115 13.0169 -0.00214708 13.1451 0.000150968C13.2732 0.00244901 13.3996 0.0309567 13.5167 0.0839747C13.6338 0.136993 13.7392 0.213434 13.8266 0.308738L20.7208 7.31451C20.8996 7.49639 21 7.74294 21 8C21 8.25706 20.8996 8.50361 20.7208 8.68549L13.8266 15.6913Z" fill="currentColor"></path></svg>
-            </Link>
-            <Link className='w-[280px] h-[65px] bg-red-500  text-[22px] text-white rounded-full flex items-center justify-center gap-[34px]'>Download the app
-            <div className  ="-rotate-45"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="16" viewBox="0 0 21 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.8266 15.6913C13.7392 15.7866 13.6338 15.863 13.5167 15.916C13.3996 15.969 13.2732 15.9976 13.1451 15.9998C13.0169 16.0021 12.8896 15.9782 12.7707 15.9294C12.6519 15.8806 12.5439 15.808 12.4532 15.7159C12.3626 15.6238 12.2911 15.5141 12.2431 15.3933C12.1951 15.2725 12.1715 15.1431 12.1738 15.0129C12.1761 14.8826 12.2041 14.7542 12.2563 14.6352C12.3085 14.5162 12.3837 14.4091 12.4775 14.3203L17.7425 8.97003H0.954582C0.70141 8.97003 0.458609 8.86783 0.279589 8.68591C0.100571 8.504 -1.90735e-06 8.25727 -1.90735e-06 8C-1.90735e-06 7.74273 0.100571 7.496 0.279589 7.31408C0.458609 7.13217 0.70141 7.02997 0.954582 7.02997H17.7425L12.4775 1.67971C12.3837 1.59091 12.3085 1.48382 12.2563 1.36483C12.2041 1.24584 12.1761 1.11739 12.1738 0.987143C12.1715 0.856896 12.1951 0.727521 12.2431 0.606735C12.2911 0.48595 12.3626 0.376228 12.4532 0.284115C12.5439 0.192003 12.6519 0.119386 12.7707 0.0705988C12.8896 0.0218115 13.0169 -0.00214708 13.1451 0.000150968C13.2732 0.00244901 13.3996 0.0309567 13.5167 0.0839747C13.6338 0.136993 13.7392 0.213434 13.8266 0.308738L20.7208 7.31451C20.8996 7.49639 21 7.74294 21 8C21 8.25706 20.8996 8.50361 20.7208 8.68549L13.8266 15.6913Z" fill="currentColor"></path></svg></div>
-            </Link>
+        <div className='h-[644px] bg-cover bg-no-repeat bg-bottom bg-bimg mt-24 pt-[111px] pb-[190px] relative'>
+          <div className=' mx-auto px-3'>
+            <div>
+              <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex flex-wrap md:justify-start justify-center">Your happily
+                <span className="uppercase ml-2 lg:static block">ever after</span>
+              </h2>
+              <h2 className=" text-start md:text-[68px] text-[47px] font-semibold text-white uppercase  relative">with Talkangel!</h2>
+              <p className="lg:text-left text-center text-[26px] text-white font-thin lg:max-w-[630px] mt-2">Join the exciting journey of meeting new friends within our vibrant community of over one million users!</p>
+              <div className='flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center'>
+                <Link className='w-[230px] h-[65px] bg-[#15B37E] text-[22px] text-white rounded-full flex items-center justify-center gap-[34px]'>Get Started
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="16" viewBox="0 0 21 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.8266 15.6913C13.7392 15.7866 13.6338 15.863 13.5167 15.916C13.3996 15.969 13.2732 15.9976 13.1451 15.9998C13.0169 16.0021 12.8896 15.9782 12.7707 15.9294C12.6519 15.8806 12.5439 15.808 12.4532 15.7159C12.3626 15.6238 12.2911 15.5141 12.2431 15.3933C12.1951 15.2725 12.1715 15.1431 12.1738 15.0129C12.1761 14.8826 12.2041 14.7542 12.2563 14.6352C12.3085 14.5162 12.3837 14.4091 12.4775 14.3203L17.7425 8.97003H0.954582C0.70141 8.97003 0.458609 8.86783 0.279589 8.68591C0.100571 8.504 -1.90735e-06 8.25727 -1.90735e-06 8C-1.90735e-06 7.74273 0.100571 7.496 0.279589 7.31408C0.458609 7.13217 0.70141 7.02997 0.954582 7.02997H17.7425L12.4775 1.67971C12.3837 1.59091 12.3085 1.48382 12.2563 1.36483C12.2041 1.24584 12.1761 1.11739 12.1738 0.987143C12.1715 0.856896 12.1951 0.727521 12.2431 0.606735C12.2911 0.48595 12.3626 0.376228 12.4532 0.284115C12.5439 0.192003 12.6519 0.119386 12.7707 0.0705988C12.8896 0.0218115 13.0169 -0.00214708 13.1451 0.000150968C13.2732 0.00244901 13.3996 0.0309567 13.5167 0.0839747C13.6338 0.136993 13.7392 0.213434 13.8266 0.308738L20.7208 7.31451C20.8996 7.49639 21 7.74294 21 8C21 8.25706 20.8996 8.50361 20.7208 8.68549L13.8266 15.6913Z" fill="currentColor"></path></svg>
+                </Link>
+                <Link className='w-[280px] h-[65px] bg-red-500  text-[22px] text-white rounded-full flex items-center justify-center gap-[34px]'>Download the app
+                  <div className="-rotate-45"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="16" viewBox="0 0 21 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.8266 15.6913C13.7392 15.7866 13.6338 15.863 13.5167 15.916C13.3996 15.969 13.2732 15.9976 13.1451 15.9998C13.0169 16.0021 12.8896 15.9782 12.7707 15.9294C12.6519 15.8806 12.5439 15.808 12.4532 15.7159C12.3626 15.6238 12.2911 15.5141 12.2431 15.3933C12.1951 15.2725 12.1715 15.1431 12.1738 15.0129C12.1761 14.8826 12.2041 14.7542 12.2563 14.6352C12.3085 14.5162 12.3837 14.4091 12.4775 14.3203L17.7425 8.97003H0.954582C0.70141 8.97003 0.458609 8.86783 0.279589 8.68591C0.100571 8.504 -1.90735e-06 8.25727 -1.90735e-06 8C-1.90735e-06 7.74273 0.100571 7.496 0.279589 7.31408C0.458609 7.13217 0.70141 7.02997 0.954582 7.02997H17.7425L12.4775 1.67971C12.3837 1.59091 12.3085 1.48382 12.2563 1.36483C12.2041 1.24584 12.1761 1.11739 12.1738 0.987143C12.1715 0.856896 12.1951 0.727521 12.2431 0.606735C12.2911 0.48595 12.3626 0.376228 12.4532 0.284115C12.5439 0.192003 12.6519 0.119386 12.7707 0.0705988C12.8896 0.0218115 13.0169 -0.00214708 13.1451 0.000150968C13.2732 0.00244901 13.3996 0.0309567 13.5167 0.0839747C13.6338 0.136993 13.7392 0.213434 13.8266 0.308738L20.7208 7.31451C20.8996 7.49639 21 7.74294 21 8C21 8.25706 20.8996 8.50361 20.7208 8.68549L13.8266 15.6913Z" fill="currentColor"></path></svg></div>
+                </Link>
+              </div>
+            </div>
+            <img className='lg:absolute top-[79px] xl:right-[150px]  lg:mt-0 mt-10 mx-auto px-7 h-[600px] ' src='https://www.talkangels.com/static/media/iPhone-13-Pro-Front.bfd3ad4acc101a655894.png' />
           </div>
-        </div>  
-      <img className='lg:absolute top-[79px] xl:right-[150px]  lg:mt-0 mt-10 mx-auto px-7 h-[600px] ' src='https://www.talkangels.com/static/media/iPhone-13-Pro-Front.bfd3ad4acc101a655894.png'/>
-    </div>
 
-  </div>
+        </div>
 
-  {/* <footer>
+        {/* <footer>
     <div className='lg:pt-[110px] mx-auto px-3'>
     <div className='flex items-center lg:justify-between justify-center border-b border-white/25 pb-[30px] flex-wrap'>
       <div className='lg:w-auto w-full'>
@@ -395,8 +396,9 @@ const Home = () => {
     </div>
     </div>
   </footer> */}
-  
+
       </div>
+      <Footer />
     </>
   );
 };

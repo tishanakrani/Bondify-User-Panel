@@ -4,8 +4,8 @@ import { Link } from 'react-router'
 const Listeners = () => {
   return (
     <>
-      <div className='bg-Homepage'>
-        <div className='mx-auto px-3'>
+      <div className='bg-Homepage -mt-36'>
+        <div className='mx-auto px-3 pt-32'>
           <div>
             <div className='flex justify-end'>
               <Link className="mt-[30px] text-white text-center text-[18px] bg-[#15b37e] hover:bg-[#15b37ea1] px-5 py-1 rounded">Be A Listener</Link>
