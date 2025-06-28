@@ -96,7 +96,7 @@ const Home = () => {
 
   return (
     <>
-      <div className='bg-Homepage -mt-36 pb-[400px]'>
+      <div className='bg-Homepage -mt-36 pb-[450px]'>
         <div className='xl:max-w[90%] mx-auto px-3 pt-32'>
           <div className='grid lg:grid-cols-2 grid-cols-1 xl:items-center items-start justify-between flex-wrap'>
             <div>

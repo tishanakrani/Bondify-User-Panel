@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const Footer = () => {
   return (
     <>
-      <div className='bg-transparent -mt-[400px]'>
+      <div className='bg-transparent -mt-[470px]'>
          <footer>
             <div className='lg:pt-[110px] mx-auto px-3'>
             <div className='flex items-center lg:justify-between justify-center border-b border-white/25 pb-[30px] flex-wrap'>

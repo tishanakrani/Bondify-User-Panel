@@ -5,7 +5,7 @@ const Blog = () => {
   return (
     <>
       <div className='bg-Homepage -mt-36'>
-        <div className='mx-auto px-3 pt-[145px] pb-[370px]'>
+        <div className='mx-auto px-3 pt-[145px] pb-[450px]'>
           <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
             <div className='bg-[#75879b26] rounded-lg overflow-hidden'>
               <div>
